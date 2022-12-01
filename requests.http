@@ -1,0 +1,35 @@
+POST http://localhost:8000/auth/token/login/
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "develop"
+}
+
+###
+
+GET http://localhost:8000/notes/
+Content-Type: application/json
+Authorization: Token 37a02bbf5b1dd1df27d721e88bcd95e3b9093736
+
+###
+
+POST http://localhost:8000/notes/
+Content-Type: application/json
+Authorization: Token 37a02bbf5b1dd1df27d721e88bcd95e3b9093736
+
+{
+  "text": "note from api",
+  "is_private": true,
+  "data": {
+    "text": "hello"
+  }
+}
+
+//const response = await fetch('http://localhost:8000/notes/', {method: "POST", data: {
+//  "text": "note from api",
+//  "is_private": true,
+//  "data": {
+//    "text": "hello"
+//  }
+//}})
